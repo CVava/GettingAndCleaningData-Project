@@ -27,6 +27,8 @@ Column | Variable Name
 
 I decided to include only the first set to make the file easily readable. For future needs the script can be changed to generate the updated tidy set.
 
+All acceleration variables maintain the original units (standard gravity units 'g'). 
+
 Other variables are Activity, and Subject. Both of these variables are treated as levels and used for clasification purposes. 
 
 Activity can have values of: 
@@ -62,6 +64,8 @@ Ar contains the train/y_train.txt, train Activity info.
 A is the file resulted from binding together Ae, Ar.
 
 D is the overall data table and F the result of the tbl_df conversion.
+
+The end result is the tidy data set containing the average of each variable for each activity and each subject.
 
 #### Processed Data
 The processed data is stored in the tidy set.
@@ -159,5 +163,5 @@ Create the report file by first grouping rows by Subject and Activity then compu
     
 Write the data to the tidy.txt file
 
-`write.table(tidy, "tidy.txt", sep="\t")`
+`write.table(tidy, "tidy.txt", sep="\t", row.name=FALSE)`
 

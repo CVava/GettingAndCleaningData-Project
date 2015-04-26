@@ -83,4 +83,5 @@ F <- tbl_df(D)
 tidy <- summarise(group_by(F, Subject, Activity), 
     MeanAccX = mean(tBodyAccMeanX), MeanAccY = mean(tBodyAccMeanY), MeanAccZ = mean(tBodyAccMeanZ), 
     StdAccX = mean(tBodyAccStdX), StdAccY = mean(tBodyAccStdY), StdAccZ = mean(tBodyAccStdZ))
-write.table(tidy, "tidy.txt", sep="\t")
+
+write.table(tidy, "tidy.txt", sep="\t", row.name=FALSE)
